@@ -18,7 +18,13 @@ const images = [
 
 const gallery = document.querySelector('#gallery');
 
-const elements = images.forEach(element => {
 
-    element = gallery.insertAdjacentHTML('afterbegin', `<li><img src ='${element.url}' alt='${element.alt}'></li>`)
+const elements = [];
+
+images.forEach(element => {
+
+  element = `<li><img src ='${element.url}' alt='${element.alt}'></li>`;
+  elements.push(element);
+
 });
+gallery.insertAdjacentHTML('afterbegin', [...elements])
